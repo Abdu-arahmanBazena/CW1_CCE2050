@@ -5,17 +5,26 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Abdo
  */
-public class Sphere extends ThreeDShapes{
+public class Sphere extends ThreeDShapes implements Serializable{
     private final double radius;
     public Sphere(String name, String type, double radius) {
         super(name, type);
         this.radius = radius;
     }
 
+    /**
+     *
+     */
+    public Sphere() {
+        //super(null,null);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     @Override
     public double getSurfaceArea() {
         final double surfaceArea = 4 * Math.PI * Math.pow(radius, 2);

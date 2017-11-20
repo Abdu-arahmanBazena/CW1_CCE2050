@@ -5,18 +5,24 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Abdo
  */
-public abstract class Shape {
-    private final String ShapeName;
-    private final String ShapeType;
+public abstract class Shape implements Serializable{
+    private  String ShapeName;
+    private  String ShapeType;
     
-    public Shape(String name, String type)
+    public Shape(String Name, String Type)
     {
-        this.ShapeName = name;
-        this.ShapeType = type;
+        this.ShapeName = Name;
+        this.ShapeType = Type;
+    }
+     public Shape()
+    {
+        
     }
 
     /**

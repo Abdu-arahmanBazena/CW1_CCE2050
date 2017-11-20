@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Abdo
  */
-public class Cylinder extends ThreeDShapes{
+public class Cylinder extends ThreeDShapes implements Serializable{
     
     private final double cylinderRadius;
     private final double cylinderHeight;
@@ -19,7 +21,11 @@ public class Cylinder extends ThreeDShapes{
         this.cylinderHeight =cylinderHeight; 
         
     }
-
+    public Cylinder() {
+        //super(null,null);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+ 
     @Override
     public double getSurfaceArea() {
         final double durfaceArea = ((2*22*cylinderRadius)/7)*(cylinderRadius+cylinderHeight);

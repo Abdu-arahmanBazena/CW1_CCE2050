@@ -5,14 +5,19 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Abdo
  */
-public abstract class ThreeDShapes extends Shape{
+public abstract class ThreeDShapes extends Shape implements Serializable{
     
     public ThreeDShapes(String name, String type) {
         super(name, type);
+    }
+     public ThreeDShapes() {
+        super(null, null);
     }
     
     public abstract double getSurfaceArea();

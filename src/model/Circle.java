@@ -5,31 +5,39 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Abdo
  */
-public class Circle extends TwoDShapes{
+public class Circle extends TwoDShapes implements Serializable{
     
-    private final double diameter;
-    private final double pie = 3.14;
+    private  double diameter=0.0;
+    private final double pi = 3.14;
    
 
     public Circle(String name, String type , double diameter) {
         super(name, type);
         this.diameter= diameter;
+        this.setArea(getArea());
+        this.setPerimeter(getPerimeter());
     }
+     public Circle() {
+        
+    }
+
 
     @Override
     public final double getArea() {
         final double r = diameter/ 2;
-        final double tempArea = pie * ( r*r );
+        final double tempArea = pi * ( r*r );
         return tempArea; 
     }
 
     @Override
     public final double getPerimeter() {
-        final double tempPerimeter = pie * diameter;
+        final double tempPerimeter = pi * diameter;
         
         return tempPerimeter;
     }

@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Abdo
  */
-public class Triangle extends TwoDShapes{
+public class Triangle extends TwoDShapes implements Serializable{
     private final double hypotenuse;
     private final double oppsite;
     private final double adjacent;
@@ -20,9 +22,15 @@ public class Triangle extends TwoDShapes{
         this.hypotenuse = hypotenuse;
         this.oppsite = oppsite;
         this.adjacent = adjacent;
+        this.setArea(getArea());
+        this.setPerimeter(getPerimeter());
     }
+
+    public Triangle() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     //calculate the area of the triangle 
-    @Override
     public final double getArea()
     {
         final double tempArea;
@@ -36,7 +44,6 @@ public class Triangle extends TwoDShapes{
     {
         final double tempPerimeter; 
         tempPerimeter = getHypotenuse() + getOppsite() + getAdjacent();
-        
         return tempPerimeter;
     };
     

@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Abdo
  */
-public class Rectangle extends TwoDShapes{
+public class Rectangle extends TwoDShapes implements Serializable{
     private final double width;
     private final double length;
    
@@ -19,8 +21,15 @@ public class Rectangle extends TwoDShapes{
         super(name, type);
         this.length = length;
         this.width = width;
+         this.setArea(getArea());
+        this.setPerimeter(getPerimeter());
        
     }
+
+    public Rectangle() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     @Override
     public final double getArea()
